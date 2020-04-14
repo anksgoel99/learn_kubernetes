@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-for-cluster-dns
+spec:
+      containers:
+      - image: busybox
+        name: busybox
+        command: 
+         - sleep
+         - "3600"
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Always

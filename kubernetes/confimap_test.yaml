@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  Name: Ankit
+kind: ConfigMap
+metadata:
+  name: myconfig
+  namespace: default

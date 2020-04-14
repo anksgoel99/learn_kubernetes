@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-23
+  name: nginx-23
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-23
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-23
+    spec:
+      containers:
+      - image: nginx:1.9.1
+        name: nginx
+        ports:
+        - containerPort: 80
+      nodeSelector:
+             disktype: ssd

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-101
+  name: nginx-liveliness
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-99
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-99
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-100
+        command: ["sleep", "15"]
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8081
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+      restartPolicy: Always

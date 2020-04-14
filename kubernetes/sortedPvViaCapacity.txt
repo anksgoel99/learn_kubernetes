@@ -1,0 +1,5 @@
+NAME           CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS    REASON   AGE
+mongodb-pv     1Gi        RWO            Retain           Available           local-storage            70d
+mongodb-pv-2   10Gi       RWO            Retain           Available           local-storage            8m3s
+mongodb-pv-3   100Gi      RWO            Retain           Available           local-storage            7m52s
+mongodb-pv-1   200Gi      RWO            Retain           Available           local-storage            8m35s

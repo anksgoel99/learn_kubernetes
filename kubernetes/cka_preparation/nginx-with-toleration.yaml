@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: nginx-2
+  name: nginx-2
+spec:
+ tolerations:
+ - key: TestdeployNopods
+   operator: Exists
+   effect: NoSchedule
+ containers:
+ - image: nginx
+   name: nginx-test

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    networkpolicy: test
+  name: nginx-with-network-policy
+spec:
+      containers:
+      - image: nginx
+        name: nginx

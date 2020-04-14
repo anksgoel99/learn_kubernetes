@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    k8s-app: ankit-daemon
+  name: ankit-daemon
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      k8s-app: ank-test-daemon
+  template:
+    metadata:
+      labels:
+        k8s-app: ank-test-daemon
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - image: nginx
+        imagePullPolicy: IfNotPresent
+        name: ankit-daemon

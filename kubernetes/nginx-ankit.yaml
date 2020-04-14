@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-11
+  name: nginx-11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-11
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-11
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-11
+        ports:
+        - ContainerPort: 80
